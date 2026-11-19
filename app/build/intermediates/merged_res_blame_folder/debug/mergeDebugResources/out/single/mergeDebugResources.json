@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_bg_glass.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\bg_glass.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_m_nav.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_m_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\layout_item_folder.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\layout\\item_folder.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_launcher.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_bg_accent.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\bg_accent.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_bg_card.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\bg_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\layout_dialog_system.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\layout\\dialog_system.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\layout_item_app.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\layout\\item_app.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\xml_accessibility_config.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\xml\\accessibility_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_m_clock.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_m_clock.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_more.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\layout_activity_apps.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\layout\\activity_apps.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_nav_home.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_nav_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\layout_dialog_effects.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\layout\\dialog_effects.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_nav_back.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_nav_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\layout_activity_split.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\layout\\activity_split.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_bg_chip.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\bg_chip.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_nav_recents.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_nav_recents.xml"
+    },
+    {
+        "merged": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-debug-20:\\drawable_ic_m_image.xml.flat",
+        "source": "C:\\Users\\leowu\\.gradle\\daemon\\8.13\\com.aibox.launcher.app-main-22:\\drawable\\ic_m_image.xml"
+    },
+    {
+        "merged": "com.aibox.launcher.app-debug-20:/drawable_ic_nav_apps.xml.flat",
+        "source": "com.aibox.launcher.app-main-22:/drawable/ic_nav_apps.xml"
+    }
+]

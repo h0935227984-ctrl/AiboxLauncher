@@ -1,0 +1,24 @@
+com.aibox.launcher.app-core-1.9.0-0 C:\Users\leowu\.gradle\caches\8.13\transforms\1eb9c6dd6caca2ecf5068f737a131cc5\transformed\core-1.9.0\res
+com.aibox.launcher.app-appcompat-1.6.1-1 C:\Users\leowu\.gradle\caches\8.13\transforms\733743d2600d4fa968d679c129ac3aa7\transformed\appcompat-1.6.1\res
+com.aibox.launcher.app-lifecycle-viewmodel-savedstate-2.5.1-2 C:\Users\leowu\.gradle\caches\8.13\transforms\7fa07ac6f7c316f50200b81812dc63ad\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
+com.aibox.launcher.app-startup-runtime-1.1.1-3 C:\Users\leowu\.gradle\caches\8.13\transforms\86ade7a928bb5d9a6953d060d30df5c9\transformed\startup-runtime-1.1.1\res
+com.aibox.launcher.app-lifecycle-viewmodel-2.5.1-4 C:\Users\leowu\.gradle\caches\8.13\transforms\8eba240c4b9fdc83d2d5a99adf6fba39\transformed\lifecycle-viewmodel-2.5.1\res
+com.aibox.launcher.app-activity-1.6.0-5 C:\Users\leowu\.gradle\caches\8.13\transforms\97651ef0f292f300c13885d4d34fc01f\transformed\activity-1.6.0\res
+com.aibox.launcher.app-emoji2-views-helper-1.2.0-6 C:\Users\leowu\.gradle\caches\8.13\transforms\a5854f797d1ed92e95f87376f15ec8cb\transformed\emoji2-views-helper-1.2.0\res
+com.aibox.launcher.app-annotation-experimental-1.3.0-7 C:\Users\leowu\.gradle\caches\8.13\transforms\a59b1d163a533d002b57030493e4b124\transformed\annotation-experimental-1.3.0\res
+com.aibox.launcher.app-lifecycle-livedata-core-2.5.1-8 C:\Users\leowu\.gradle\caches\8.13\transforms\bb356ec22a5e9670016a21e631f9ba07\transformed\lifecycle-livedata-core-2.5.1\res
+com.aibox.launcher.app-savedstate-1.2.0-9 C:\Users\leowu\.gradle\caches\8.13\transforms\c784f277341fab2134f4f514d2f70a82\transformed\savedstate-1.2.0\res
+com.aibox.launcher.app-lifecycle-runtime-2.5.1-10 C:\Users\leowu\.gradle\caches\8.13\transforms\cf8e93c221335094d208d29a84ba5363\transformed\lifecycle-runtime-2.5.1\res
+com.aibox.launcher.app-fragment-1.3.6-11 C:\Users\leowu\.gradle\caches\8.13\transforms\cfd57c085156af1c196c7025e552ef7e\transformed\fragment-1.3.6\res
+com.aibox.launcher.app-lifecycle-process-2.4.1-12 C:\Users\leowu\.gradle\caches\8.13\transforms\da2d54decd5a968d41ec79cca9312718\transformed\lifecycle-process-2.4.1\res
+com.aibox.launcher.app-emoji2-1.2.0-13 C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\res
+com.aibox.launcher.app-appcompat-resources-1.6.1-14 C:\Users\leowu\.gradle\caches\8.13\transforms\ea798c4ffc715e7dcc7c420eb26b6f35\transformed\appcompat-resources-1.6.1\res
+com.aibox.launcher.app-core-ktx-1.9.0-15 C:\Users\leowu\.gradle\caches\8.13\transforms\f57f110199c950609b1704310071eaca\transformed\core-ktx-1.9.0\res
+com.aibox.launcher.app-pngs-16 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\build\generated\res\pngs\debug
+com.aibox.launcher.app-resValues-17 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\build\generated\res\resValues\debug
+com.aibox.launcher.app-updated_navigation_xml-18 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\build\generated\updated_navigation_xml\debug
+com.aibox.launcher.app-packageDebugResources-19 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.aibox.launcher.app-packageDebugResources-20 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.aibox.launcher.app-debug-21 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.aibox.launcher.app-debug-22 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\debug\res
+com.aibox.launcher.app-main-23 C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\res

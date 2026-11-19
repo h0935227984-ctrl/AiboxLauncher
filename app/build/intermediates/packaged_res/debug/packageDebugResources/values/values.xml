@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#059669</color>
+    <color name="bg">#F1F5F9</color>
+    <color name="card">#EBFFFFFF</color>
+    <color name="chip">#E2E8F0</color>
+    <color name="glass_bottom">#88FFFFFF</color>
+    <color name="glass_highlight">#66FFFFFF</color>
+    <color name="glass_stroke">#26000000</color>
+    <color name="glass_top">#CCFFFFFF</color>
+    <color name="sub">#64748B</color>
+    <color name="text">#0F172A</color>
+    <string name="a11y_desc">用於顯示虛擬導覽列(返回/首頁/最近工作)。不會讀取或記錄畫面內容。</string>
+    <string name="app_name">AIBOX 桌面</string>
+    <style name="Theme.Launcher" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+</resources>

@@ -1,0 +1,159 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.aibox.launcher"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="33" />
+10
+11    <!-- 宣告 GPS 定位權限:用於偵測車輛時速與轉彎角度 -->
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:7:5-81
+13-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:7:22-78
+14
+15    <!-- 只宣告「可以被啟動的 App」,取代 QUERY_ALL_PACKAGES -->
+16    <queries>
+16-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:10:5-15:15
+17        <intent>
+17-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:11:9-14:18
+18            <action android:name="android.intent.action.MAIN" />
+18-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:12:13-65
+18-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:12:21-62
+19
+20            <category android:name="android.intent.category.LAUNCHER" />
+20-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:13:13-73
+20-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:13:23-70
+21        </intent>
+22    </queries>
+23
+24    <permission
+24-->[androidx.core:core:1.9.0] C:\Users\leowu\.gradle\caches\8.13\transforms\1eb9c6dd6caca2ecf5068f737a131cc5\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+25        android:name="com.aibox.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.9.0] C:\Users\leowu\.gradle\caches\8.13\transforms\1eb9c6dd6caca2ecf5068f737a131cc5\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.9.0] C:\Users\leowu\.gradle\caches\8.13\transforms\1eb9c6dd6caca2ecf5068f737a131cc5\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.aibox.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+28-->[androidx.core:core:1.9.0] C:\Users\leowu\.gradle\caches\8.13\transforms\1eb9c6dd6caca2ecf5068f737a131cc5\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.9.0] C:\Users\leowu\.gradle\caches\8.13\transforms\1eb9c6dd6caca2ecf5068f737a131cc5\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+29
+30    <application
+30-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:17:5-58:19
+31        android:name="com.aibox.launcher.App"
+31-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:18:9-28
+32        android:allowBackup="false"
+32-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:22:9-36
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.9.0] C:\Users\leowu\.gradle\caches\8.13\transforms\1eb9c6dd6caca2ecf5068f737a131cc5\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:icon="@drawable/ic_launcher"
+36-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:19:9-45
+37        android:label="@string/app_name"
+37-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:20:9-41
+38        android:theme="@style/Theme.Launcher" >
+38-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:21:9-46
+39
+40        <!-- 桌面 (Launcher) 入口:HOME + DEFAULT 讓系統把它當成可選的桌面 -->
+41        <activity
+41-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:26:9-41:20
+42            android:name="com.aibox.launcher.HomeActivity"
+42-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:27:13-41
+43            android:exported="true"
+43-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:28:13-36
+44            android:launchMode="singleTask"
+44-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:29:13-44
+45            android:resumeWhilePausing="true"
+45-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:31:13-46
+46            android:stateNotNeeded="true" >
+46-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:30:13-42
+47            <intent-filter>
+47-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:32:13-36:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:12:13-65
+48-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:12:21-62
+49
+50                <category android:name="android.intent.category.HOME" />
+50-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:34:17-73
+50-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:34:27-70
+51                <category android:name="android.intent.category.DEFAULT" />
+51-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:35:17-76
+51-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:35:27-73
+52            </intent-filter>
+53            <intent-filter>
+53-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:37:13-40:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:12:13-65
+54-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:12:21-62
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:13:13-73
+56-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:13:23-70
+57            </intent-filter>
+58        </activity>
+59        <activity
+59-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:43:9-75
+60            android:name="com.aibox.launcher.AppsActivity"
+60-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:43:19-47
+61            android:exported="false" />
+61-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:43:48-72
+62        <activity
+62-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:44:9-83
+63            android:name="com.aibox.launcher.SplitManagerActivity"
+63-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:44:19-55
+64            android:exported="false" />
+64-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:44:56-80
+65
+66        <!-- 無障礙服務:承載虛擬導覽列 -->
+67        <service
+67-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:47:9-57:19
+68            android:name="com.aibox.launcher.NavService"
+68-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:48:13-39
+69            android:exported="false"
+69-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:49:13-37
+70            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+70-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:50:13-79
+71            <intent-filter>
+71-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:51:13-53:29
+72                <action android:name="android.accessibilityservice.AccessibilityService" />
+72-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:52:17-92
+72-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:52:25-89
+73            </intent-filter>
+74
+75            <meta-data
+75-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:54:13-56:64
+76                android:name="android.accessibilityservice"
+76-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:55:17-60
+77                android:resource="@xml/accessibility_config" />
+77-->C:\Users\leowu\Downloads\AiboxLauncher (1)\AiboxLauncher\app\src\main\AndroidManifest.xml:56:17-61
+78        </service>
+79
+80        <provider
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+81            android:name="androidx.startup.InitializationProvider"
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+82            android:authorities="com.aibox.launcher.androidx-startup"
+82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+83            android:exported="false" >
+83-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+84            <meta-data
+84-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+85                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+86                android:value="androidx.startup" />
+86-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leowu\.gradle\caches\8.13\transforms\dbb9b3396782e0bc64cef479dd49cf63\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+87            <meta-data
+87-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\leowu\.gradle\caches\8.13\transforms\da2d54decd5a968d41ec79cca9312718\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+88                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+88-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\leowu\.gradle\caches\8.13\transforms\da2d54decd5a968d41ec79cca9312718\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+89                android:value="androidx.startup" />
+89-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\leowu\.gradle\caches\8.13\transforms\da2d54decd5a968d41ec79cca9312718\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+90        </provider>
+91    </application>
+92
+93</manifest>

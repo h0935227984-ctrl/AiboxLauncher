@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swCar3D"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="開啟 3D 車輛桌面展廳 (360° GLB)"
+        android:textSize="16sp"
+        android:paddingBottom="12dp"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swRainbowRoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="啟用彩虹大道模式 (GPS/模擬)"
+        android:textSize="16sp"
+        android:paddingBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnImportGlb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="匯入自訂 3D 車輛模型 (.glb)"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnResetGlb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="還原預設 3D 車輛模型"
+        android:layout_marginBottom="16dp"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="啟用虛擬導覽列"
+        android:textSize="16sp"
+        android:paddingBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnSplitManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分割畫面管理"/>
+
+</LinearLayout>

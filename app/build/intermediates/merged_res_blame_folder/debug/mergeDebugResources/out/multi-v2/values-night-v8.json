@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.aibox.launcher.app-mergeDebugResources-18:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\leowu\\.gradle\\caches\\8.13\\transforms\\733743d2600d4fa968d679c129ac3aa7\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "486,556,640,724,820,922,1024,1118",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "551,635,719,815,917,1019,1113,1202"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\leowu\\Downloads\\AiboxLauncher (1)\\AiboxLauncher\\app\\src\\main\\res\\values-night\\colors.xml",
+                    "from": {
+                        "startLines": "5,1,2,6,8,10,9,7,4,3",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "171,16,53,212,297,395,346,251,133,94",
+                        "endColumns": "40,36,40,38,48,51,48,45,37,38",
+                        "endOffsets": "207,48,89,246,341,442,390,292,166,128"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,96,133,174,213,262,314,363,409,447",
+                        "endColumns": "40,36,40,38,48,51,48,45,37,38",
+                        "endOffsets": "91,128,169,208,257,309,358,404,442,481"
+                    }
+                }
+            ]
+        }
+    ]
+}

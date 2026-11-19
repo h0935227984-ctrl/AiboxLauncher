@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <title>3D Car Interactive Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; user-select: none; -webkit-user-select: none; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: transparent; }
+        #container { width: 100%; height: 100%; display: block; position: absolute; top: 0; left: 0; z-index: 1; }
+
+        /* 最下層超薄極簡膠囊列 (微型控制) */
+        .hud-layer {
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 0 4px;
+        }
+
+        .hud-bar {
+            pointer-events: auto;
+            background: rgba(15, 23, 42, 0.35);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2px 6px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            max-width: 98%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .btn-chip {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 9px;
+            font-weight: 600;
+            color: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-chip:active, .btn-chip.active {
+            background: rgba(56, 189, 248, 0.3);
+            border-color: #38bdf8;
+            color: #ffffff;
+            box-shadow: 0 0 6px rgba(56, 189, 248, 0.35);
+        }
+
+        /* 載入提示 */
+        #loading {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 6px 16px;
+            border-radius: 18px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .spinner {
+            width: 12px; height: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #38bdf8;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+    <script src="three.min.js"></script>
+    <script src="GLTFLoader.js"></script>
+    <script src="OrbitControls.js"></script>
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+        <span id="loadText">載入 3D 車輛模型中...</span>
+    </div>
+
+    <div id="container"></div>
+
+    <!-- 3D 檢視控制列 -->
+    <div class="hud-layer">
+        <div class="hud-bar">
+            <button class="btn-chip" id="btnAutoRotate" onclick="toggleAutoRotate()">🔄 巡航 OFF</button>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const loading = document.getElementById('loading');
+        const loadText = document.getElementById('loadText');
+
+        // 建立 3D 場景與攝影機
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+
+        // 預設視角：車頭 45 度微仰角 (1.75 比例，100% 完整顯示全車輪廓)
+        const defaultStationaryCamPos = new THREE.Vector3(2.5, 0.95, 2.9);
+        camera.position.copy(defaultStationaryCamPos);
+
+        // 15.6吋車機專用高清自適應渲染器
+        const renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true,
+            powerPreference: "high-performance",
+            precision: "highp"
+        });
+
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping = THREE.LinearToneMapping;
+        renderer.toneMappingExposure = 1.0;
+        container.appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.enablePan = false;
+        controls.maxPolarAngle = Math.PI / 2 + 0.08;
+        controls.minDistance = 1.2;
+        controls.maxDistance = 9.0;
+
+        let isUserInteracting = false;
+        let resetTimer = null;
+
+        controls.addEventListener('start', function () {
+            isUserInteracting = true;
+            if (resetTimer) clearTimeout(resetTimer);
+        });
+
+        controls.addEventListener('end', function () {
+            if (resetTimer) clearTimeout(resetTimer);
+            resetTimer = setTimeout(function () {
+                isUserInteracting = false;
+            }, 4000);
+        });
+
+        // 展廳燈光
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.1);
+        scene.add(ambientLight);
+
+        const mainSun = new THREE.DirectionalLight(0xffffff, 1.3);
+        mainSun.position.set(5, 10, 7);
+        scene.add(mainSun);
+
+        const backSun = new THREE.DirectionalLight(0xffffff, 0.9);
+        backSun.position.set(-5, 8, -7);
+        scene.add(backSun);
+
+        const topSun = new THREE.DirectionalLight(0xffffff, 0.7);
+        topSun.position.set(0, 12, 0);
+        scene.add(topSun);
+
+        // 車底真實漸層陰影
+        const shadowCanvas = document.createElement('canvas');
+        shadowCanvas.width = 512;
+        shadowCanvas.height = 512;
+        const shadowCtx = shadowCanvas.getContext('2d');
+
+        const gradient = shadowCtx.createRadialGradient(256, 256, 10, 256, 256, 230);
+        gradient.addColorStop(0, 'rgba(0, 0, 0, 0.75)');
+        gradient.addColorStop(0.3, 'rgba(0, 0, 0, 0.45)');
+        gradient.addColorStop(0.7, 'rgba(0, 0, 0, 0.15)');
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+        shadowCtx.fillStyle = gradient;
+        shadowCtx.fillRect(0, 0, 512, 512);
+
+        const shadowTexture = new THREE.CanvasTexture(shadowCanvas);
+        shadowTexture.needsUpdate = false;
+
+        const shadowGeo = new THREE.PlaneGeometry(3.6, 4.8);
+        const shadowMat = new THREE.MeshBasicMaterial({
+            map: shadowTexture,
+            transparent: true,
+            opacity: 0.8,
+            depthWrite: false
+        });
+
+        const shadowPlane = new THREE.Mesh(shadowGeo, shadowMat);
+        shadowPlane.rotation.x = -Math.PI / 2;
+        shadowPlane.position.y = 0.001;
+        scene.add(shadowPlane);
+
+        // 車模變數與 GPS 轉灣航向變數
+        let carModel = null;
+        let carHeight = 1.0;
+        let autoRotate = false;
+        let initialBearingDeg = -1;
+        let targetTurnAngleRad = 0;
+        let currentTurnAngleRad = 0;
+        let targetLookAt = new THREE.Vector3(0, 0.5, 0);
+
+        // 讀取 URL 參數
+        const urlParams = new URLSearchParams(window.location.search);
+        const modelUrl = urlParams.get('model') || 'carnew.glb';
+
+        const loader = new THREE.GLTFLoader();
+        loader.load(modelUrl, function (gltf) {
+            carModel = gltf.scene;
+
+            carModel.traverse(function (node) {
+                if (node.isMesh && node.material) {
+                    const mats = Array.isArray(node.material) ? node.material : [node.material];
+                    mats.forEach(m => {
+                        if (!m) return;
+                        m.side = THREE.DoubleSide;
+                        if (m.map) m.map.encoding = THREE.sRGBEncoding;
+                    });
+                }
+            });
+
+            const box0 = new THREE.Box3().setFromObject(carModel);
+            const size0 = box0.getSize(new THREE.Vector3());
+            const maxDim = Math.max(size0.x, size0.y, size0.z);
+            const scale = 1.75 / (maxDim || 1);
+            carModel.scale.set(scale, scale, scale);
+
+            const box = new THREE.Box3().setFromObject(carModel);
+            const center = box.getCenter(new THREE.Vector3());
+            carModel.position.x -= center.x;
+            carModel.position.z -= center.z;
+            carModel.position.y -= box.min.y;
+
+            carHeight = box.max.y - box.min.y;
+            targetLookAt.set(0, carHeight * 0.45, 0);
+
+            controls.target.copy(targetLookAt);
+            controls.update();
+
+            scene.add(carModel);
+            loading.style.display = 'none';
+        }, undefined, function (error) {
+            console.warn('GLB file load fallback:', error);
+            loading.style.display = 'none';
+        });
+
+        function setGpsData(kmh, bearingDeg) {
+            if (bearingDeg !== undefined && bearingDeg !== null && bearingDeg >= 0) {
+                if (initialBearingDeg < 0) {
+                    initialBearingDeg = bearingDeg;
+                } else {
+                    let diff = bearingDeg - initialBearingDeg;
+                    if (diff > 180) diff -= 360;
+                    if (diff < -180) diff += 360;
+                    targetTurnAngleRad = (diff * Math.PI / 180.0);
+                }
+            }
+        }
+
+        function toggleAutoRotate() {
+            autoRotate = !autoRotate;
+            const btn = document.getElementById('btnAutoRotate');
+            if (autoRotate) {
+                btn.innerText = '🔄 巡航 ON';
+                btn.classList.add('active');
+            } else {
+                btn.innerText = '🔄 巡航 OFF';
+                btn.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', onWindowResize, false);
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            if (carModel) {
+                carModel.rotation.y = 0;
+            }
+
+            if (autoRotate) {
+                shadowPlane.rotation.z += 0.01;
+            }
+
+            if (!isUserInteracting) {
+                camera.position.lerp(defaultStationaryCamPos, 0.05);
+            }
+
+            controls.target.copy(targetLookAt);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
